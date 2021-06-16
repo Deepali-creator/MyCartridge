@@ -1,0 +1,26 @@
+@RestResource(urlMapping='/createOrder/')
+global class CreateNewOrder 
+{
+    @HTTPPost
+    global static void createOrder()
+    {
+        System.debug('hey');
+        integer listSize;
+        RestRequest req=RestContext.request;
+        RestResponse res=RestContext.response;
+        List<String> OrderNoList = req.params.get('OrderNo').split(',');
+        listSize=OrderNoList.size();
+        List<Order__c> orderList=new List<Order__c>();
+        
+        if(OrderNoList.size()!=0)
+        {
+            for(integer i=0; i<listSize;i++)
+            {
+                Order__c order =new Order__c(Name=OrderNoList[i]);
+                orderList.add(order);
+            }
+            Database.insert(orderList,false);
+        }
+
+    }
+}

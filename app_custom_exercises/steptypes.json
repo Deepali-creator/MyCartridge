@@ -1,0 +1,32 @@
+{
+    "step-types":
+    {
+      "script-module-step":
+      [
+        {
+          "@type-id":"custom.MyCustomStep",
+          "description":"My custom script step type",
+          "module":"app_custom_exercises/cartridge/scripts/assetUpdater",
+          "function":"execute",
+          "status-codes": 
+          {
+                    "status": 
+            [
+                        {
+                            "@code": "ERROR",
+                            "description": "Used when the step failed with an error."
+                        },
+                        {
+                            "@code": "FINISHED",
+                "description": "Used when the step finished successfully."
+                        },
+                        {
+                            "@code": "FINISHED_WITH_WARNINGS",
+                "description": "Used when the step finished with warnings."
+                        }
+                    ]
+                }
+        }
+      ]
+    }
+  }

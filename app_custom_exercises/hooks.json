@@ -1,0 +1,22 @@
+{
+"hooks": [
+    {
+        "name": "app.email",
+        "script": "./cartridge/scripts/hooks/email"
+    },
+
+    {
+      "name": "dw.system.request.onRequest",
+      "script": "./cartridge/scripts/hooks/MagicValidator"
+    },
+
+    {
+      
+        "name":"app.order",
+        "script":"./cartridge/scripts/hooks/order"
+      
+    }
+    
+
+  ]
+}
