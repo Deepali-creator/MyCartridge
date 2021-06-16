@@ -1,0 +1,27 @@
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+   
+        <body>
+         <div>
+            <input name="pid" placeholder="Enter Product Id" type="text" id="pid" class="pid"/>
+
+            <script>
+                function redirectToProduct()
+                {
+                var ProdId  = document.getElementById("pid").value;
+                var url = "https://dev08-na-conair.demandware.net/on/demandware.store/Sites-dharmesh-Site/en_US/ProductCart-Start?pid="+ProdId+"&quantity=10";
+                console.log("prodId "+ProdId);
+                    window.location.href = url;
+                }
+                </script>
+               
+             <button onclick="redirectToProduct()">Continue</button>
+            </div>
+    </body>
+   
+</html> 
