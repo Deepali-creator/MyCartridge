@@ -10,19 +10,18 @@ var URLUtils = require('dw/web/URLUtils');
 
 server.get('Start', function (req, res, next)
 {
-    var productId=req.querystring.pid;
-    var quantity=parseInt(1, 10);
-    quantity=parseInt(req.querystring.quantity, 10);
+    var prodId=req.querystring.pid;
+    var quantity=parseInt(req.querystring.quantity, 10);
     var result={};
     var currentBasket = BasketMgr.getCurrentOrNewBasket();
     if (currentBasket)
     {
      
-     Logger.warn('BasketId'+currentBasket);
+
      Transaction.wrap(function () {
         result = cartHelper.addProductToCart(
             currentBasket,
-            productId,
+            prodId,
             quantity,
             2
         );
